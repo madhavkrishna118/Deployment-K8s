@@ -5,8 +5,9 @@ metadata:
 spec:
   selector:
     app: nginx
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8081       # Service Port
       targetPort: 8081 # Container Port
-  type: ClusterIP
+      nodePort: 0      # Let Kubernetes choose an available port
